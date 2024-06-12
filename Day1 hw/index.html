@@ -4,18 +4,21 @@
 <head>
     <title>Day 1 Homework</title>
     <style type="text/css">
-        body {
+        body{
             text-align: center;
             padding: 5px;
             margin: 5px;
+            
         }
         form input{
             height: 50px;
             width: 30;
-            border-radius: 10px;
+            border-radius: 7px;
             margin-right: 10px;
             margin-top: 5px;
-            margin-bottom: 5px;   
+            margin-bottom: 5px;
+            border-color: Gainsboro;
+            border-width: 1.5px;
         }
         #buttons button{
         	max-width: 250px;
@@ -24,9 +27,11 @@
             margin-right: 10px;
             margin-left: 10px;
         	display: inline-block; 
-            border-radius: 10px;
+            border-radius: 8px;
             color: aliceblue;
             font-size: 17px;
+            border-color: Gainsboro;
+            border-width: 1px;
         }
         #box-register{
         	margin: 2px;
@@ -36,6 +41,7 @@
             border-radius: 4px;
             background-color: RGB(86, 151, 233);
             color: aliceblue;
+            
         }
         #agree {
             display: inline-block;
@@ -47,6 +53,11 @@
       		text-align: left;
             width: 60%;
         }
+        .seperate {
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
     </style>
 </head>
 
@@ -55,15 +66,19 @@
     <h1>Sign Up</h1>
 	
     <form>
+        <span class="seperate">
         <input type="text" placeholder="First Name" size="28">
         <input type="text" placeholder="Last Name" size="28">
+        </span>
     <br>
         <input type="tel" placeholder="Mobile No." size="63.5">
     <br>
         <input type="email" placeholder="Email Address" size="63.5">
     <br>
+    <span class="seperate">
         <input type="password" placeholder="Password" size="28">
         <input type="password" placeholder="Confirm Password" size="28">
+    </span>
     </form>
     <br>
     
