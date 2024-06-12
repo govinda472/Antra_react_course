@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Day 1 Homework</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            padding: 5px;
+            margin: 5px;
+        }
+        form input{
+            height: 50px;
+            width: 30;
+            border-radius: 10px;
+            margin-right: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;   
+        }
+        #buttons button{
+        	max-width: 250px;
+        	height: 50px;
+            width: 20%;
+            margin-right: 10px;
+            margin-left: 10px;
+        	display: inline-block; 
+            border-radius: 10px;
+            color: aliceblue;
+            font-size: 17px;
+        }
+        #box-register{
+        	margin: 2px;
+            padding: 5px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-radius: 4px;
+            background-color: RGB(86, 151, 233);
+            color: aliceblue;
+        }
+        #agree {
+            display: inline-block;
+            vertical-align: top;
+        }
+        #agree p {
+            display: inline-block;
+            margin-left: 25px;
+      		text-align: left;
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sign Up</h1>
+	
+    <form>
+        <input type="text" placeholder="First Name" size="28">
+        <input type="text" placeholder="Last Name" size="28">
+    <br>
+        <input type="tel" placeholder="Mobile No." size="63.5">
+    <br>
+        <input type="email" placeholder="Email Address" size="63.5">
+    <br>
+        <input type="password" placeholder="Password" size="28">
+        <input type="password" placeholder="Confirm Password" size="28">
+    </form>
+    <br>
+    
+    <span id="agree">
+    	
+        <input type="checkbox" id="agree-box">
+        <label for="agree-box">I agree</label>
+        <p> By clicking <span id="box-register">Register</span>, you agree to the <a href="#">terms and conditions</a> set out by this site, including our cookie use.</p>
+        
+    </span>
+    
+    <br>
+    <div id="buttons" >
+        <button style="background-color: RGB(86, 151, 233); " size="28">Register</button>
+        <button style="background-color: RGB(106, 215, 106); " size="28">Sign In</button>
+    </div>
+
+</body>
+
+</html>
