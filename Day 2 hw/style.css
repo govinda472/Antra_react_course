@@ -44,6 +44,16 @@ text-decoration: none;
 color: #007bff;
 }
 
+.world {
+    color: #127ddd;
+      
+}
+
+.design {
+    color: #4caf50;
+      
+}
+
 
 
 
@@ -61,6 +71,9 @@ color: #007bff;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    
+    
 }
 
 .box h2 {
@@ -82,4 +95,8 @@ color: #007bff;
 .box a {
     color: #007bff;
     text-decoration: underline;
+    margin-top: auto;
 }
+  .box h2{
+      margin-top: 10px;
+      }
