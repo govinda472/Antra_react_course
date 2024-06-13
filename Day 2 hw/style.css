@@ -1,67 +1,60 @@
 * {
     margin: 0;
     padding: 0;
-    }
-    
-body{
-text-align: center;
-align-content: center;
-margin: 0 auto;
-padding: 20px;
 }
 
-
-.header{
-display: flex;
-text-decoration: underline;
-align-items: center;
-margin-bottom: 10px;
-padding: 0 20px;
+body {
+    text-align: center;
+    align-content: center;
+    margin: 0 auto;
+    padding: 20px;
 }
+
+.header {
+    display: flex;
+    text-decoration: underline;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+
 .main-title {
     margin: 0;
     margin-left: 100px;
     margin-right: 20%;
 }
-.subscribe{
-color: grey;
-margin-left: 20%;
-margin-right: 100px;
+
+.subscribe {
+    color: grey;
+    margin-left: 20%;
+    margin-right: 100px;
 }
 
-
-
-footer{
+footer {
     text-align: center;
-margin-top: 20px;
-padding-top: 10px;
-border-top: 1px solid #e5e5e5;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #e5e5e5;
 }
-
 
 footer a {
-text-decoration: none;
-color: #007bff;
+    text-decoration: none;
+    color: #007bff;
 }
 
 .world {
     color: #127ddd;
-      
 }
 
 .design {
     color: #4caf50;
-      
 }
 
-
-
-
 .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 0 10%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 10%;
 }
 
 .box {
@@ -72,12 +65,11 @@ color: #007bff;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     flex-direction: column;
-    
-    
 }
 
 .box h2 {
     font-size: 1.25rem;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -97,6 +89,3 @@ color: #007bff;
     text-decoration: underline;
     margin-top: auto;
 }
-  .box h2{
-      margin-top: 10px;
-      }
