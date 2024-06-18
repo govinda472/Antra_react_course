@@ -1,8 +1,6 @@
 // must know Array
 // forEach, filter, map, find, includes, join, pop, push, reduce, sort
 // slice, reverse
-// Online Javascript Editor for free
-// Write, Edit and Run your Javascript code using JS Online Compiler
 
 // must know Array
 
