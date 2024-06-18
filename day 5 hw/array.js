@@ -68,3 +68,17 @@ console.log(dic);
 
 // reverse
 console.log(dic.reverse());
+
+// other useful ones
+// some, every, findIndex,
+//some
+const even = (element) => element % 2 === 0;
+console.log(arr1.some(even))
+
+//every
+const postive= (element) => element>0;
+console.log(arr1.every(postive))
+
+//FindIndex
+const idx= (element) => element%2===0;
+console.log(arr1.findIndex(idx));
