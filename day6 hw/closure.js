@@ -7,7 +7,14 @@
 // console.log(sayHello("Alice"));  // Outputs: "Hello Alice"
 // const sayHi = createGreeting("Hi");
 // console.log(sayHi("Bob"));  // Outputs: "Hi Bob"
-export function createGreeting(greeting) {}
+export function createGreeting(greeting) {
+    function sayHello(name) {
+        return `${greeting} ${name}`;
+    }
+    return { 
+        sayHello
+    }
+}
 
 // Exercise 2: Counter
 // Write a function createCounter() that initializes a counter to 0 and returns an object with two methods:
@@ -19,7 +26,20 @@ export function createGreeting(greeting) {}
 // console.log(counter.increment());  // Outputs: 1
 // console.log(counter.increment());  // Outputs: 2
 // console.log(counter.getValue());  // Outputs: 2
-export function createCounter() {}
+export function createCounter() {
+    let count=0;
+    function increment(){
+        count+=1;
+        return count;
+    }
+    function getValue(){
+        return count;
+    }
+    return {
+        increment,
+        getValue
+    }
+}
 
 // Exercise 3: Function Store
 // Create a function functionStore() that allows you to store and retrieve functions by a key.
@@ -31,7 +51,19 @@ export function createCounter() {}
 // let store = functionStore();
 // store.store("add", (a, b) => a + b);
 // console.log(store.run("add", 5, 7)); // Outputs: 12
-export function functionStore() {}
+export function functionStore() {
+    let obj = {};
+    function store(key, fn){
+        obj[key] = fn;
+    }
+    function run(key, ...args){
+        return obj[key](...args);
+    }
+    return {
+        store,
+        run
+    }
+}
 
 // Exercise 4: Private Variables
 // Write a function createPerson(name) that creates private variables and provides methods
@@ -42,7 +74,19 @@ export function functionStore() {}
 // console.log(person.getName());  // Outputs: "Alice"
 // person.setName("Bob");
 // console.log(person.getName());  // Outputs: "Bob"
-export function createPerson(name) {}
+export function createPerson(name) {
+    let name= name;
+    function getName(){
+        return name;
+    }
+    function setName(newName){
+        name = newName;
+    }
+    return {
+        getName,
+        setName
+    }
+}
 
 // Exercise 5: Limited Call Function
 // Description: Write a function createLimitedCallFunction(fn, limit) that
@@ -60,7 +104,15 @@ export function createPerson(name) {}
 // limitedHello(); // Outputs: "Hello!"
 // limitedHello(); // No output, subsequent calls are ignored
 
-export function createLimitedCallFunction(fn, limit) {}
+export function createLimitedCallFunction(fn, limit) {
+    let count = 0;
+    return () => {
+      if (count < limit) {
+        count+=1;
+        fn();
+      }
+    }
+}
 
 // Exercise 6: Rate Limiter
 // Implement a function createRateLimiter(limit, interval) that limits how often a
@@ -78,4 +130,17 @@ export function createLimitedCallFunction(fn, limit) {}
 // limitedLog("World"); // "World" is logged
 // limitedLog("Again"); // This call is ignored
 
-export function createRateLimiter(fn, limit, interval) {}
+export function createRateLimiter(fn, limit, interval) {
+    let count = 0;
+    let lastCalled = 0;
+    return () => {
+        if (count < limit) {
+            const now = Date.now();
+            if (now - lastCalled >= interval) {
+                count += 1;
+                lastCalled = now;
+                fn();
+            }
+        }
+      }
+}
