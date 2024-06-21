@@ -16,7 +16,9 @@ const totalCreditsManager = (() => {
         totalCreditsElem.textContent = totalCredits;
     };
 
-    const getTotalCredits = () => totalCredits;
+    const getTotalCredits = () => {
+        return totalCredits;
+    }
 
     return {
         updateTotalCredits,
@@ -109,7 +111,7 @@ class Course {
 selectButton.addEventListener("click", () => { 
     const total=totalCreditsManager.getTotalCredits();
     
-    if (confirm('You have chosen' + total + ' credits for this semester. You cannot change once you submit. Do you want to confirm?')) {
+    if (confirm('You have chosen ' + total + ' credits for this semester. You cannot change once you submit. Do you want to confirm?')) {
         const transfer= selectioncourses.getCourses();
         transfer.forEach(course => {
             course.moveTo(selectedCourses);

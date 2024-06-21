@@ -9,18 +9,18 @@ header{
     height:300px;
     width:200px;
     border:1px solid black;
-  overflow: auto; 
+    overflow: auto; 
 
 }
 .layout{
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20%;
     
 } 
 footer{
-text-align: center;
+    text-align: center;
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -32,21 +32,21 @@ footer span{
     gap: 10px;
 }
 .box h3{
-            text-align: center;
-            margin: 10px 0;
-        }
+    text-align: center;
+    margin: 10px 0;
         
+}
         
-        .course {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: center;
-        }
+.course {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
 
-        .course:nth-child(even) {
-            background-color: rgb(221, 239, 221);
-        }
+.course:nth-child(even) {
+  background-color: rgb(221, 239, 221);
+}
 
-        .selected {
-            background-color: deepskyblue !important;
-        }
+.selected {
+    background-color: deepskyblue !important;
+    }
