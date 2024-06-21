@@ -16,7 +16,7 @@ header{
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 30%;
+            gap: 20%;
     
 } 
 footer{
@@ -48,5 +48,5 @@ footer span{
         }
 
         .selected {
-            background-color: deepskyblue;
+            background-color: deepskyblue !important;
         }

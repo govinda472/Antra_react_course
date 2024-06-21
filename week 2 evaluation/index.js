@@ -49,7 +49,7 @@ class Course {
         this.id = id;
         this.name = name;
         if (type === true) {
-            this.type = 'Required';
+            this.type = 'Compulsory';
         }
         else if (type === false) {
             this.type = 'Elective';
@@ -109,7 +109,7 @@ class Course {
 selectButton.addEventListener("click", () => { 
     const total=totalCreditsManager.getTotalCredits();
     
-    if (confirm("you have chosen${total} credits for this semester. You cannot change once you submit. Do you want to confirm?")) {
+    if (confirm('You have chosen' + total + ' credits for this semester. You cannot change once you submit. Do you want to confirm?')) {
         const transfer= selectioncourses.getCourses();
         transfer.forEach(course => {
             course.moveTo(selectedCourses);
@@ -120,17 +120,31 @@ selectButton.addEventListener("click", () => {
 });
 
 const api_main= 'http://localhost:4232/courseList';
-courseslist = async () => {
+
+
+const courseslist = async () => {
     const response = await fetch(api_main);
     const data = await response.json();
     if (!response.ok) {
         throw new Error(data.message || "Failed to fetch posts");
     }
     return data;
-}
-let data = courseslist();
-data.forEach(course => {
-    const newCourse = new Course(course.courseId, course.name, course.required, course.credit);
-    newCourse.addTo(availableCourses);
-});
+};
 
+const initializeCourses = async () => {
+    try {
+        let data = await courseslist();
+        console.log(data); // Log the data to see its structure
+        if (!Array.isArray(data)) {
+            data = data.courses; // Adjust this line according to the actual structure
+        }
+        data.forEach(course => {
+            const newCourse = new Course(course.courseId, course.courseName, course.required, course.credit);
+            newCourse.addTo(availableCourses);
+        });
+    } catch (error) {
+        console.error("Error initializing courses:", error);
+    }
+};
+
+initializeCourses();
