@@ -76,7 +76,7 @@ class Course {
 
     toggleSelection() {
         if (!this.selected) {
-            if (totalCreditsManager.getTotalCredits() + this.credit > 18) {
+            if (totalCreditsManager.getTotalCredits() + this.credit > 10) {
                 alert('You can only choose up to 18 credits in one semester');
                 return;
             }
@@ -136,9 +136,9 @@ const courseslist = async () => {
 const initializeCourses = async () => {
     try {
         let data = await courseslist();
-        console.log(data); // Log the data to see its structure
+        console.log(data); 
         if (!Array.isArray(data)) {
-            data = data.courses; // Adjust this line according to the actual structure
+            data = data.courses; 
         }
         data.forEach(course => {
             const newCourse = new Course(course.courseId, course.courseName, course.required, course.credit);
