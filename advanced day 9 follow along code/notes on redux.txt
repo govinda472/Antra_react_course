@@ -1,0 +1,10 @@
+Store: The store holds the application state. It is created using createStore and can be extended with middleware.
+Action: Actions are plain JavaScript objects that describe a change. They have a type property that indicates the type of action being performed.
+Reducer: Reducers specify how the application's state changes in response to actions sent to the store. Reducers are pure functions that take the previous state and an action and return the next state.
+Dispatch: This is the method used to send actions to the store. store.dispatch(action) is used to dispatch an action.
+Selectors: Functions that extract and return pieces of the state from the store. They help encapsulate the state structure and make it easier to manage.
+
+
+payload is what is passed into the function
+
+...State ~ preserves the old state before additional modifications are made
