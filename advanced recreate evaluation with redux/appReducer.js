@@ -1,4 +1,4 @@
-import { createStore, connect } from 'react-redux'
+import { combineReducers,createStore, connect } from 'react-redux'
 const data = [{
     "id":1,
     "courseName":"React",
@@ -31,11 +31,39 @@ const data = [{
 }
 ];
 
+const availableCourses = [];
 
-const availableCoursesReducer =(state=data, action)=>{
+
+const availableCoursesReducer = (state=availableCourses, action)=>{
     switch(action.type){
         case 'SET_COURSES':
-            return action.payload
+            for(let i=0; i<action.payload.length; i++){
+                state.push(action.payload[i]);
+            }
+            return state;
+        case 'ADD_COURSE':
+            state.push(action.payload);
+            return state;
+        case 'REMOVE_COURSE':
+            const index = state.findIndex(course=>course.id === action.payload.id);
+            state.splice(index, 1);
+            return state;
+        default:
+            return state
+    }
+}
+
+const selectedCourses = [];
+
+const selectedCoursesReducer = (state=selectedCourses, action)=>{
+    switch(action.type){
+        case 'ADD_SELECTED_COURSE':
+            state.push(action.payload);
+            return state;
+        case 'REMOVE_SELECTED_COURSE':
+            const index = state.findIndex(course=>course.id === action.payload.id);
+            state.splice(index, 1);
+            return state;
         default:
             return state
     }
@@ -43,9 +71,9 @@ const availableCoursesReducer =(state=data, action)=>{
 
 
 
+const rootReducer = combineReducers({
+    available: availableCoursesReducer,
+    selected: selectedCoursesReducer
+  });
 
-
-
-export default function appReducer() {
-    
-}
+export default rootReducer;
