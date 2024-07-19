@@ -1,5 +1,5 @@
 import { combineReducers,createStore, connect } from 'react-redux'
-
+//add the keyword initi to it
 const availableCourses = [];
 
 
@@ -37,7 +37,7 @@ const selectedCoursesReducer = (state=selectedCourses, action)=>{
             return state
     }
 }
-
+// reutrn {...state, payload}
 const creditsReducer = (state=0, action)=>{
     switch(action.type){
         case 'ADD_CREDITS':

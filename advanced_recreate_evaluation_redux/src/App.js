@@ -83,7 +83,7 @@ const removeSelectedCourse = (course)=>{
 }
 
 export default function App() {
-
+    //place in another file
     const store = createStore(rootReducer);
     const units = useSelector(state=>state.credits);
     const availableCourses = useSelector(state=>state.available);
@@ -92,7 +92,7 @@ export default function App() {
     // const data_via_server = await getCourses();
     // store.dispatch(setCourses(data_via_server));
     store.dispatch(setCourses(data));
-
+    //remove store doc
     return (
         <div>
 <div class="layout">
