@@ -5,8 +5,8 @@ import { formStyle } from '../styles/styles';
 
 function PhoneBookForm() {
   const [user, setUser] = useState({
-    firstName: 'Coder',
-    lastName: 'Byte',
+    firstName: 'govinda',
+    lastName: 'sahoo',
     phone: '8885559999',
   });
 
