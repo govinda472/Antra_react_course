@@ -1,18 +1,13 @@
 import { combineReducers,createStore, connect } from 'react-redux'
 //add the keyword initi to it
-const availableCourses = [];
 
 
-const availableCoursesReducer = (state=availableCourses, action)=>{
+const availableCoursesReducer = (state=[], action)=>{
     switch(action.type){
         case 'SET_COURSES':
-            for(let i=0; i<action.payload.length; i++){
-                state.push(action.payload[i]);
-            }
-            return state;
-        case 'ADD_COURSE':
-            state.push(action.payload);
-            return state;
+            return {...state, payload};
+        case 'ADD_COURSE':;
+            return {...state, payload};
         case 'REMOVE_COURSE':
             const index = state.findIndex(course=>course.id === action.payload.id);
             state.splice(index, 1);
@@ -22,13 +17,12 @@ const availableCoursesReducer = (state=availableCourses, action)=>{
     }
 }
 
-const selectedCourses = [];
 
-const selectedCoursesReducer = (state=selectedCourses, action)=>{
+
+const selectedCoursesReducer = (state=[], action)=>{
     switch(action.type){
         case 'ADD_SELECTED_COURSE':
-            state.push(action.payload);
-            return state;
+            return {...state, payload}
         case 'REMOVE_SELECTED_COURSE':
             const index = state.findIndex(course=>course.id === action.payload.id);
             state.splice(index, 1);
@@ -48,9 +42,6 @@ const creditsReducer = (state=0, action)=>{
             return state;
     }
 }
-
-
-
 
 
 const rootReducer = combineReducers({

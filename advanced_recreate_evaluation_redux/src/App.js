@@ -1,7 +1,7 @@
 import react from 'react';
 import "./styles.css";
 import { useDispatch, createStore, useSelector } from 'react-redux';
-import rootReducer from './appReducer';
+import rootReducer from './redux/appReducer';
 import { getCourses } from './getCourses';
 
 const data = [{

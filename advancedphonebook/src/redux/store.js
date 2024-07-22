@@ -1,9 +1,6 @@
-import { createStore } from 'redux';
-import phoneBookReducer from './reducers';
+import { createStore } from "redux";
+import { phoneBookReducer } from "./reducers.js";
 
-const store = createStore(
-  phoneBookReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = createStore(phoneBookReducer);
 
 export default store;

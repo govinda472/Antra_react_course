@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addEntryToPhoneBook } from '../redux/actions';
-import { formStyle } from '../styles/styles';
-
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addEntryToPhoneBook } from "../redux/actions.js";
+import { formStyle } from "../styles/styles";
+const placeholder = {
+  firstName: "Coder",
+  lastName: "Byte",
+  phone: "8885559999",
+};
 function PhoneBookForm() {
-  const [user, setUser] = useState({
-    firstName: 'govinda',
-    lastName: 'sahoo',
-    phone: '8885559999',
-  });
+  const [user, setUser] = useState(placeholder);
 
   const dispatch = useDispatch();
 
@@ -23,7 +23,7 @@ function PhoneBookForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addEntryToPhoneBook(user));
-    setUser({ firstName: 'Coder', lastName: 'Byte', phone: '8885559999' });
+    setUser(placeholder);
   };
 
   return (

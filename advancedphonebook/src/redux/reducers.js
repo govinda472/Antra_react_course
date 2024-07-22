@@ -1,10 +1,6 @@
-import { ADD_ENTRY } from './actions';
+import { ADD_ENTRY } from "./actions";
 
-const initialState = {
-  books: [],
-};
-
-const phoneBookReducer = (state = initialState, action) => {
+export const phoneBookReducer = (state = { books: [] }, action) => {
   switch (action.type) {
     case ADD_ENTRY:
       return {
@@ -15,5 +11,3 @@ const phoneBookReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-export default phoneBookReducer;
