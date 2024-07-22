@@ -49,5 +49,6 @@ const rootReducer = combineReducers({
     selected: selectedCoursesReducer,
     credits: creditsReducer
   });
+  export const store = createStore(rootReducer);
 
 export default rootReducer;

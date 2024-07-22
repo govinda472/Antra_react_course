@@ -4,37 +4,6 @@ import { useDispatch, createStore, useSelector } from 'react-redux';
 import rootReducer from './redux/appReducer';
 import { getCourses } from './getCourses';
 
-const data = [{
-    "id":1,
-    "courseName":"React",
-    "unit":3,
-    "required":true
-},
-{
-    "id":2,
-    "courseName":"Redux",
-    "unit":2,
-    "required":true
-}
-{
-    "id":3,
-    "courseName":"Node",
-    "unit":3,
-    "required":true
-},
-{
-    "id":4,
-    "courseName":"MongoDB",
-    "unit":2,
-    "required":false
-},
-{
-    "id":5,
-    "courseName":"Express",
-    "unit":2,
-    "required":false
-}
-];
 
 const addCredits = (credits)=>{
     return {
@@ -83,16 +52,16 @@ const removeSelectedCourse = (course)=>{
 }
 
 export default function App() {
-    //place in another file
-    const store = createStore(rootReducer);
+   
     const units = useSelector(state=>state.credits);
     const availableCourses = useSelector(state=>state.available);
     const selectedCourses = useSelector(state=>state.selected);
+
     const dispatch = useDispatch();
-    // const data_via_server = await getCourses();
-    // store.dispatch(setCourses(data_via_server));
+    const data_via_server = getCourses();
+    store.dispatch(setCourses(data_via_server));
     store.dispatch(setCourses(data));
-    //remove store doc
+    
     return (
         <div>
 <div class="layout">
