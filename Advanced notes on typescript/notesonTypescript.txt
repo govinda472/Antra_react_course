@@ -1,0 +1,104 @@
+TypeScript: A superset of JavaScript that adds static typing. It helps in catching errors at compile time, thus reducing runtime errors.
+Advantages of TypeScript: Provides better code readability and maintainability
+
+Setup Steps:
+Use create-react-app with the TypeScript template by running:
+
+npx create-react-app my-app --template typescript
+
+For existing projects, install TypeScript and the necessary type definitions:
+npm install typescript @types/react @types/react-dom @types/node
+
+Configure tsconfig.json to set TypeScript compiler options according to your project's needs, ensuring it includes the src directory.
+
+defining types for variables:
+let count: number = 10;
+let name: string = "John";
+let isActive: boolean = true;
+
+
+defining objects:
+interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = {
+  name: "Alice",
+  age: 30
+};
+
+to make it optional put? next to the variable
+
+union:
+let value: string | number;
+value = "Hello";
+value = 42;
+
+can be of either value
+
+
+set input type and return type for functions
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+
+any type is a dynamic type where it can be anything bypassing typecheck
+
+Differences: type can define primitive types, unions, and tuples, while interface is mainly for objects.
+
+extending types:
+type BasicInfo = {
+  name: string;
+};
+
+type DetailedInfo = BasicInfo & {
+  age: number;
+  address: string;
+};
+
+const user: DetailedInfo = {
+  name: "jim",
+  age: 30,
+  address: "123 convoy St"
+};
+
+interface extension:
+
+interface BasicInfo {
+  name: string;
+}
+
+interface DetailedInfo extends BasicInfo {
+  age: number;
+  address: string;
+}
+
+const user: DetailedInfo = {
+  name: "Alice",
+  age: 30,
+  address: "123 Main St"
+};
+
+
+
+UI components:
+interface InputProps {
+  label: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const Input: React.FC<InputProps> = ({ label, value, onChange }) => {
+  return (
+    <div>
+      <label>{label}</label>
+      <input type="text" value={value} onChange={onChange} />
+    </div>
+  );
+};
+
+
+
+
